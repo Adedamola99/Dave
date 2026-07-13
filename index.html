@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dave Akpan — International Fashion Model. Editorial, Runway, Commercial.">
+    <title>DAVE AKPAN — Model</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Cinematic Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">DAVE.</div>
+            <div class="loader-bar-wrap">
+                <div class="loader-fill" id="loaderFill"></div>
+            </div>
+            <div class="loader-count" id="loaderCount">0</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="nav" id="mainNav">
+        <a href="#hero" class="nav-logo">DAVE.</a>
+        <nav class="nav-center" role="navigation" aria-label="Main navigation">
+            <a href="#about"     class="nav-link">About</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#campaigns" class="nav-link">Campaigns</a>
+            <a href="#contact"   class="nav-link">Contact</a>
+        </nav>
+        <div class="nav-right">
+            <a href="mailto:akpandavid16@gmail.com" class="nav-book" data-magnetic>Book Now</a>
+            <button class="hamburger" id="hamburger" aria-label="Open Menu" aria-expanded="false">
+                <span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <div class="mobile-menu-bg"></div>
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+            <a href="#about"     class="mobile-link" data-index="01">About</a>
+            <a href="#portfolio" class="mobile-link" data-index="02">Portfolio</a>
+            <a href="#campaigns" class="mobile-link" data-index="03">Campaigns</a>
+            <a href="#services"  class="mobile-link" data-index="04">Services</a>
+            <a href="#contact"   class="mobile-link" data-index="05">Contact</a>
+        </nav>
+        <div class="mobile-footer">
+            <span>@Theblacdave_</span>
+            <span>akpandavid16@gmail.com</span>
+        </div>
+    </div>
+
+    <main>
+
+        <!-- ═══════ HERO ═══════ -->
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <img src="./Assets/img/IMG_-5mtsny.jpg"
+                     alt="Dave Akpan — Fashion Model"
+                     class="hero-image"
+                     id="heroImage"
+                     loading="eager"
+                     fetchpriority="high">
+                <div class="hero-vignette"></div>
+            </div>
+
+            <div class="hero-content">
+                <div class="hero-badge" id="heroBadge">
+                    <span>Lagos · Nigeria</span>
+                    <div class="hero-badge-dot"></div>
+                    <span>Available Worldwide</span>
+                </div>
+
+                <h1 class="hero-title" id="heroTitle">
+                    <div class="title-line">
+                        <span class="title-word">Rethinking</span>
+                    </div>
+                    <div class="title-line title-line--italic">
+                        <span class="title-word">Elegance.</span>
+                    </div>
+                </h1>
+
+                <div class="hero-bottom">
+                    <p class="hero-desc" id="heroDesc">Fashion Model · Runway · Editorial · Commercial</p>
+                    <a href="#portfolio" class="hero-cta" id="heroCta" data-magnetic>
+                        <span>Explore Work</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m7 17 10-10M7 7h10v10"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-scroll-indicator">
+                <div class="scroll-line"></div>
+                <span>Scroll</span>
+            </div>
+
+            <div class="hero-counter">
+                <span class="counter-current" id="heroSlideNum">01</span>
+                <span class="counter-sep">/ 03</span>
+            </div>
+
+            <div class="hero-dots" id="heroDots" aria-label="Slide navigation">
+                <button class="hero-dot active" aria-label="Slide 1" aria-current="true"></button>
+                <button class="hero-dot" aria-label="Slide 2"></button>
+                <button class="hero-dot" aria-label="Slide 3"></button>
+            </div>
+
+            <!-- Hidden slide sources -->
+            <div class="hero-slides" aria-hidden="true">
+                <div class="hero-slide active" data-src="./Assets/img/IMG_-5mtsny.jpg"></div>
+                <div class="hero-slide" data-src="./Assets/img/IMG_20220502_113104_587.JPG"></div>
+                <div class="hero-slide" data-src="./Assets/img/IMG_0432.JPG"></div>
+            </div>
+        </section>
+
+        <!-- ═══════ MARQUEE ═══════ -->
+        <div class="marquee-section" aria-hidden="true">
+            <div class="marquee-inner">
+                <span>EDITORIAL</span><span class="sep">×</span>
+                <span>RUNWAY</span><span class="sep">×</span>
+                <span>COMMERCIAL</span><span class="sep">×</span>
+                <span>HIGH FASHION</span><span class="sep">×</span>
+                <span>LOOKBOOK</span><span class="sep">×</span>
+                <span>CAMPAIGNS</span><span class="sep">×</span>
+                <span>EDITORIAL</span><span class="sep">×</span>
+                <span>RUNWAY</span><span class="sep">×</span>
+                <span>COMMERCIAL</span><span class="sep">×</span>
+                <span>HIGH FASHION</span><span class="sep">×</span>
+                <span>LOOKBOOK</span><span class="sep">×</span>
+                <span>CAMPAIGNS</span><span class="sep">×</span>
+            </div>
+        </div>
+
+        <!-- ═══════ ABOUT ═══════ -->
+        <section class="about" id="about">
+            <div class="about-grid">
+
+                <div class="about-images">
+                    <div class="about-img-main anim-reveal">
+                        <img src="./Assets/img/IMG_0349.JPG"
+                             alt="Dave Akpan portrait"
+                             loading="lazy">
+                    </div>
+                    <div class="about-img-sub anim-reveal" data-delay="150">
+                        <img src="./Assets/img/IMG_0427.JPG"
+                             alt="Dave Akpan detail"
+                             loading="lazy">
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <p class="section-eyebrow anim-reveal">01 / About</p>
+
+                    <h2 class="about-heading">
+                        <span class="trl anim-reveal" data-delay="50">The Face</span>
+                        <em class="trl anim-reveal" data-delay="120">Behind</em>
+                        <span class="trl anim-reveal" data-delay="190">The Look.</span>
+                    </h2>
+
+                    <p class="about-body anim-reveal" data-delay="260">
+                        Dave Akpan is a Lagos-based fashion model whose commanding presence and innate sense of style have made him a sought-after name across editorial, runway, and commercial campaigns throughout West Africa and beyond.
+                    </p>
+                    <p class="about-body anim-reveal" data-delay="320">
+                        With over five years in the industry, Dave blends raw authenticity with refined elegance—adapting effortlessly to every creative direction from minimalist luxury to bold avant-garde concepts.
+                    </p>
+
+                    <div class="about-stats anim-reveal" data-delay="400">
+                        <div class="stat">
+                            <div class="stat-num">5+</div>
+                            <div class="stat-label">Years Active</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-num">30+</div>
+                            <div class="stat-label">Campaigns</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-num">10+</div>
+                            <div class="stat-label">Brands</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ PORTFOLIO MASONRY ═══════ -->
+        <section class="portfolio" id="portfolio">
+            <div class="section-header">
+                <p class="section-eyebrow anim-reveal">02 / Portfolio</p>
+                <h2 class="section-title">
+                    <span class="trl anim-reveal" data-delay="60">Selected</span>
+                    <em class="trl anim-reveal" data-delay="130">Works.</em>
+                </h2>
+            </div>
+
+            <div class="masonry-grid">
+                <!-- Column A -->
+                <div class="masonry-col">
+                    <div class="masonry-item anim-reveal" data-delay="0">
+                        <div class="masonry-img-wrap">
+                            <img src="./Assets/img/IMG_0349.JPG" alt="Editorial shoot" loading="lazy">
+                        </div>
+                        <div class="masonry-caption"><span>Editorial</span><span>01</span></div>
+                    </div>
+                    <div class="masonry-item anim-reveal" data-delay="80">
+                        <div class="masonry-img-wrap masonry-img-wrap--short">
+                            <img src="./Assets/img/2465631736257367777__2022-05-02 10_36_52.810946.jpg.jpg" alt="High Fashion" loading="lazy">
+                        </div>
+                        <div class="masonry-caption"><span>High Fashion</span><span>02</span></div>
+                    </div>
+                    <div class="masonry-item anim-reveal" data-delay="160">
+                        <div class="masonry-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1509631179647-0c5000642f51?w=600&q=80&auto=format" alt="Portrait editorial" loading="lazy">
+                        </div>
+                        <div class="masonry-caption"><span>Portrait</span><span>03</span></div>
+                    </div>
+                </div>
+
+                <!-- Column B (offset down) -->
+                <div class="masonry-col masonry-col--offset">
+                    <div class="masonry-item anim-reveal" data-delay="40">
+                        <div class="masonry-img-wrap masonry-img-wrap--tall">
+                            <img src="./Assets/img/IMG_0351 (1).JPG" alt="Studio portrait" loading="lazy">
+                        </div>
+                        <div class="masonry-caption"><span>Portrait</span><span>04</span></div>
+                    </div>
+                    <div class="masonry-item anim-reveal" data-delay="200">
+                        <div class="masonry-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80&auto=format" alt="Runway" loading="lazy">
+                        </div>
+                        <div class="masonry-caption"><span>Runway</span><span>05</span></div>
+                    </div>
+                </div>
+
+                <!-- Column C -->
+                <div class="masonry-col">
+                    <div class="masonry-item anim-reveal" data-delay="100">
+                        <div class="masonry-img-wrap masonry-img-wrap--short">
+                            <img src="./Assets/img/IMG_0432.JPG" alt="Streetwear" loading="lazy">
+                        </div>
+                        <div class="masonry-caption"><span>Streetwear</span><span>06</span></div>
+                    </div>
+                    <div class="masonry-item anim-reveal" data-delay="180">
+                        <div class="masonry-img-wrap masonry-img-wrap--tall">
+                            <img src="./Assets/img/IMG_0340 (1).JPG" alt="Studio" loading="lazy">
+                        </div>
+                        <div class="masonry-caption"><span>Studio</span><span>07</span></div>
+                    </div>
+                    <div class="masonry-item anim-reveal" data-delay="260">
+                        <div class="masonry-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1506634572416-48cdfe530110?w=600&q=80&auto=format" alt="Campaign" loading="lazy">
+                        </div>
+                        <div class="masonry-caption"><span>Campaign</span><span>08</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ CAMPAIGNS ═══════ -->
+        <section class="campaign" id="campaigns">
+            <p class="section-eyebrow anim-reveal">03 / Campaigns</p>
+
+            <div class="campaign-reel" role="region" aria-label="Campaign slideshow">
+                <div class="campaign-item active" id="c1">
+                    <div class="campaign-img">
+                        <img src="./Assets/img/2452375397251101167__2022-05-02 10_35_18.241383.jpg.jpg" alt="Urban Edge campaign" loading="lazy">
+                    </div>
+                    <div class="campaign-info">
+                        <div class="campaign-number">01</div>
+                        <h3 class="campaign-title">Urban Edge</h3>
+                        <p class="campaign-sub">Streetwear Collection · 2024</p>
+                    </div>
+                </div>
+                <div class="campaign-item" id="c2">
+                    <div class="campaign-img">
+                        <img src="./Assets/img/2465631736425087099__2022-05-02 10_36_49.623959.jpg.jpg" alt="Midnight Noir campaign" loading="lazy">
+                    </div>
+                    <div class="campaign-info">
+                        <div class="campaign-number">02</div>
+                        <h3 class="campaign-title">Midnight Noir</h3>
+                        <p class="campaign-sub">Editorial · Vogue West Africa</p>
+                    </div>
+                </div>
+                <div class="campaign-item" id="c3">
+                    <div class="campaign-img">
+                        <img src="./Assets/img/2497909030950743125__2022-05-02 10_34_07.509904.jpg.jpg" alt="Raw Elegance campaign" loading="lazy">
+                    </div>
+                    <div class="campaign-info">
+                        <div class="campaign-number">03</div>
+                        <h3 class="campaign-title">Raw Elegance</h3>
+                        <p class="campaign-sub">Studio Portrait Series</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="campaign-controls">
+                <button class="campaign-btn" id="campaignPrev" aria-label="Previous campaign">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <div class="campaign-progress-wrap">
+                    <div class="campaign-bar" id="campaignBar"></div>
+                </div>
+                <button class="campaign-btn" id="campaignNext" aria-label="Next campaign">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- ═══════ SERVICES ═══════ -->
+        <section class="services" id="services">
+            <div class="section-header">
+                <p class="section-eyebrow anim-reveal">04 / Services</p>
+                <h2 class="section-title">
+                    <span class="trl anim-reveal" data-delay="60">Book</span>
+                    <em class="trl anim-reveal" data-delay="130">Dave.</em>
+                </h2>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card anim-reveal" data-delay="0">
+                    <img src="./Assets/img/IMG_20220502_125326_282.JPG" alt="Editorial service" class="service-img" loading="lazy">
+                    <div class="service-body">
+                        <div class="service-num">01</div>
+                        <h3 class="service-name">Editorial</h3>
+                        <p>Magazine spreads, lookbooks, and creative editorial shoots that tell compelling visual stories.</p>
+                        <div class="service-tag">Print · Digital</div>
+                    </div>
+                </div>
+                <div class="service-card anim-reveal" data-delay="80">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format" alt="Runway service" class="service-img" loading="lazy">
+                    <div class="service-body">
+                        <div class="service-num">02</div>
+                        <h3 class="service-name">Runway</h3>
+                        <p>Runway shows, presentations, and showroom modelling for fashion designers and brands.</p>
+                        <div class="service-tag">Live · Collections</div>
+                    </div>
+                </div>
+                <div class="service-card anim-reveal" data-delay="160">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&q=80&auto=format" alt="Commercial service" class="service-img" loading="lazy">
+                    <div class="service-body">
+                        <div class="service-num">03</div>
+                        <h3 class="service-name">Commercial</h3>
+                        <p>Brand campaigns, product photography, and advertising for a wide range of industries.</p>
+                        <div class="service-tag">E-Commerce · Ads</div>
+                    </div>
+                </div>
+                <div class="service-card anim-reveal" data-delay="240">
+                    <img src="./Assets/img/IMG-20200807-WA0053.jpg" alt="Classes service" class="service-img" loading="lazy">
+                    <div class="service-body">
+                        <div class="service-num">04</div>
+                        <h3 class="service-name">Classes</h3>
+                        <p>Professional modelling classes covering posing, runway walk, confidence, and industry fundamentals.</p>
+                        <div class="service-tag">Coaching · Mentorship</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ EDITORIAL FEED (Draggable) ═══════ -->
+        <section class="editorials" id="editorials">
+            <div class="section-header">
+                <p class="section-eyebrow anim-reveal">05 / Editorial Feed</p>
+                <h2 class="section-title">
+                    <span class="trl anim-reveal" data-delay="60">Press &amp;</span>
+                    <em class="trl anim-reveal" data-delay="130">Features.</em>
+                </h2>
+                <p class="drag-hint anim-reveal" data-delay="220">← Drag to explore →</p>
+            </div>
+
+            <div class="editorials-drag" id="editorialsDrag" role="region" aria-label="Editorial photo scroll">
+                <div class="editorials-track" id="editorialsTrack">
+                    <article class="editorial-item">
+                        <div class="editorial-img">
+                            <img src="./Assets/img/IMG_20220502_125326_282.JPG" alt="Modelling class editorial" loading="lazy">
+                        </div>
+                        <div class="editorial-info">
+                            <p class="editorial-pub">Modelling Class</p>
+                            <h3 class="editorial-title">The Art of the Walk</h3>
+                            <p class="editorial-date">2024</p>
+                        </div>
+                    </article>
+                    <article class="editorial-item">
+                        <div class="editorial-img">
+                            <img src="./Assets/img/IMG-20200807-WA0053.jpg" alt="Studio session" loading="lazy">
+                        </div>
+                        <div class="editorial-info">
+                            <p class="editorial-pub">Studio Session</p>
+                            <h3 class="editorial-title">Defining the Silhouette</h3>
+                            <p class="editorial-date">2023</p>
+                        </div>
+                    </article>
+                    <article class="editorial-item">
+                        <div class="editorial-img">
+                            <img src="./Assets/img/IMG-20200807-WA0065.jpg" alt="Campaign shoot" loading="lazy">
+                        </div>
+                        <div class="editorial-info">
+                            <p class="editorial-pub">Campaign Shoot</p>
+                            <h3 class="editorial-title">Power in Stillness</h3>
+                            <p class="editorial-date">2023</p>
+                        </div>
+                    </article>
+                    <article class="editorial-item">
+                        <div class="editorial-img">
+                            <img src="./Assets/img/IMG-20200807-WA0070.jpg" alt="Lagos Fashion Week" loading="lazy">
+                        </div>
+                        <div class="editorial-info">
+                            <p class="editorial-pub">Runway</p>
+                            <h3 class="editorial-title">Lagos Fashion Week</h3>
+                            <p class="editorial-date">2022</p>
+                        </div>
+                    </article>
+                    <article class="editorial-item">
+                        <div class="editorial-img">
+                            <img src="./Assets/img/2503720056648603068__2022-05-02 10_29_35.415694.jpg.jpg" alt="Brand campaign" loading="lazy">
+                        </div>
+                        <div class="editorial-info">
+                            <p class="editorial-pub">Commercial</p>
+                            <h3 class="editorial-title">Brand Campaign 2022</h3>
+                            <p class="editorial-date">2022</p>
+                        </div>
+                    </article>
+                    <article class="editorial-item">
+                        <div class="editorial-img">
+                            <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600&q=80&auto=format" alt="Portrait series" loading="lazy">
+                        </div>
+                        <div class="editorial-info">
+                            <p class="editorial-pub">Portrait Series</p>
+                            <h3 class="editorial-title">Faces of Lagos</h3>
+                            <p class="editorial-date">2022</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ BRANDS ═══════ -->
+        <div class="brands-bar" aria-label="Brand partners">
+            <div class="brands-track" aria-hidden="true">
+                <span>Zara</span><span class="brand-sep">—</span>
+                <span>H&amp;M</span><span class="brand-sep">—</span>
+                <span>Nike</span><span class="brand-sep">—</span>
+                <span>Adidas</span><span class="brand-sep">—</span>
+                <span>Gucci</span><span class="brand-sep">—</span>
+                <span>Prada</span><span class="brand-sep">—</span>
+                <span>Loewe</span><span class="brand-sep">—</span>
+                <span>Zara</span><span class="brand-sep">—</span>
+                <span>H&amp;M</span><span class="brand-sep">—</span>
+                <span>Nike</span><span class="brand-sep">—</span>
+                <span>Adidas</span><span class="brand-sep">—</span>
+                <span>Gucci</span><span class="brand-sep">—</span>
+                <span>Prada</span><span class="brand-sep">—</span>
+                <span>Loewe</span><span class="brand-sep">—</span>
+            </div>
+        </div>
+
+        <!-- ═══════ TESTIMONIALS ═══════ -->
+        <section class="testimonials" id="testimonials">
+            <p class="section-eyebrow anim-reveal" style="text-align:center">06 / What They Say</p>
+
+            <div class="testimonials-slider" id="testimonialsSlider">
+                <div class="testimonial active">
+                    <blockquote>
+                        "Dave brings an unmatched energy to every set. He understands the camera like no other — raw, focused, and effortlessly charismatic."
+                    </blockquote>
+                    <cite>— Creative Director, Lagos Editorial Collective</cite>
+                </div>
+                <div class="testimonial">
+                    <blockquote>
+                        "Working with Dave was one of the best decisions we made for our campaign. He elevated every shot beyond expectation."
+                    </blockquote>
+                    <cite>— Brand Manager, West Africa Fashion Brand</cite>
+                </div>
+                <div class="testimonial">
+                    <blockquote>
+                        "A rare combination of discipline and artistry. Dave understands fashion at a cellular level."
+                    </blockquote>
+                    <cite>— Runway Director, Lagos Fashion Week</cite>
+                </div>
+            </div>
+
+            <div class="testimonials-nav">
+                <button class="t-btn" id="tPrev" aria-label="Previous testimonial">←</button>
+                <div class="t-dots" id="tDots">
+                    <button class="t-dot active" aria-label="Testimonial 1" aria-current="true"></button>
+                    <button class="t-dot" aria-label="Testimonial 2"></button>
+                    <button class="t-dot" aria-label="Testimonial 3"></button>
+                </div>
+                <button class="t-btn" id="tNext" aria-label="Next testimonial">→</button>
+            </div>
+        </section>
+
+        <!-- ═══════ CONTACT ═══════ -->
+        <section class="contact" id="contact">
+            <div class="contact-inner">
+                <div class="contact-left">
+                    <p class="section-eyebrow anim-reveal">07 / Contact</p>
+                    <h2 class="contact-heading">
+                        <span class="trl anim-reveal" data-delay="60">Let's Create</span>
+                        <em class="trl anim-reveal" data-delay="130">Something</em>
+                        <span class="trl anim-reveal" data-delay="200">Great.</span>
+                    </h2>
+                    <p class="contact-sub anim-reveal" data-delay="300">
+                        Available for bookings, collaborations, and brand partnerships worldwide.
+                    </p>
+                </div>
+                <div class="contact-links anim-reveal" data-delay="150">
+                    <a href="tel:+2348104034450" class="contact-link" data-magnetic>
+                        <div>
+                            <p class="cl-label">Phone</p>
+                            <p class="cl-value">+234 810 403 4450</p>
+                        </div>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m7 17 10-10M7 7h10v10"/></svg>
+                    </a>
+                    <a href="mailto:akpandavid16@gmail.com" class="contact-link" data-magnetic>
+                        <div>
+                            <p class="cl-label">Email</p>
+                            <p class="cl-value">akpandavid16@gmail.com</p>
+                        </div>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m7 17 10-10M7 7h10v10"/></svg>
+                    </a>
+                    <a href="https://instagram.com/Theblacdave_" target="_blank" rel="noopener noreferrer" class="contact-link" data-magnetic>
+                        <div>
+                            <p class="cl-label">Instagram</p>
+                            <p class="cl-value">@Theblacdave_</p>
+                        </div>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m7 17 10-10M7 7h10v10"/></svg>
+                    </a>
+                    <a href="https://wa.me/2348104034450" target="_blank" rel="noopener noreferrer" class="contact-link" data-magnetic>
+                        <div>
+                            <p class="cl-label">WhatsApp</p>
+                            <p class="cl-value">+234 810 403 4450</p>
+                        </div>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m7 17 10-10M7 7h10v10"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ═══════ FOOTER ═══════ -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand">DAVE.</div>
+            <p class="footer-tagline">Fashion Model · Lagos · Nigeria</p>
+        </div>
+        <div class="footer-mid">
+            <div class="footer-col">
+                <p class="footer-col-title">Navigation</p>
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#campaigns">Campaigns</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-col">
+                <p class="footer-col-title">Services</p>
+                <span>Editorial</span>
+                <span>Runway</span>
+                <span>Commercial</span>
+                <span>Coaching</span>
+            </div>
+            <div class="footer-col">
+                <p class="footer-col-title">Socials</p>
+                <a href="https://instagram.com/Theblacdave_" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://wa.me/2348104034450" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Dave Akpan. All rights reserved.</p>
+            <p>Crafted with excellence.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">×</button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="Enlarged portfolio image">
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
