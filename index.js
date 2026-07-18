@@ -38,7 +38,7 @@ function initCursor() {
     window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, { passive: true });
 
     // Hover state on interactive elements
-    qsAll('[data-magnetic], .masonry-item, .campaign-btn, .t-btn, .hero-dot').forEach(el => {
+    qsAll('[data-magnetic], .masonry-item, .campaign-btn, .t-btn, .hero-dot, .filter-btn').forEach(el => {
         el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
         el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
     });
@@ -488,27 +488,88 @@ function initDragScroll() {
 }
 
 /* ═══════════════════════════════════════════
-   12. LIGHTBOX
+   12. CINEMATIC GALLERY
 ═══════════════════════════════════════════ */
 function initLightbox() {
-    const box      = qs('#lightbox');
-    const boxImg   = qs('#lightboxImg');
-    const closeBtn = qs('#lightboxClose');
-    if (!box || !boxImg) return;
+    const box       = qs('#lightbox');
+    const trackWrap = qs('#lightboxTrackWrap');
+    const track     = qs('#lightboxTrack');
+    const closeBtn  = qs('#lightboxClose');
+    const prevBtn   = qs('#lightboxPrev');
+    const nextBtn   = qs('#lightboxNext');
+    const counter   = qs('#lightboxCounter');
+    
+    if (!box || !trackWrap) return;
 
+    let totalSlides = 0;
+
+    // Update active slide and counter based on scroll position
+    function updateOnScroll() {
+        if (totalSlides === 0) return;
+        const scrollX = trackWrap.scrollLeft;
+        const slideW  = trackWrap.offsetWidth;
+        const idx     = Math.round(scrollX / slideW);
+        
+        counter.textContent = `${Math.min(idx + 1, totalSlides)} / ${totalSlides}`;
+        
+        const slides = qsAll('.lightbox-slide', track);
+        slides.forEach((s, i) => {
+            s.classList.toggle('active', i === idx);
+        });
+    }
+
+    trackWrap.addEventListener('scroll', updateOnScroll, { passive: true });
+
+    function showNext(e) {
+        if (e) e.stopPropagation();
+        trackWrap.scrollBy({ left: trackWrap.offsetWidth, behavior: 'smooth' });
+    }
+
+    function showPrev(e) {
+        if (e) e.stopPropagation();
+        trackWrap.scrollBy({ left: -trackWrap.offsetWidth, behavior: 'smooth' });
+    }
+
+    // Open gallery when clicking a masonry item
     qsAll('.masonry-item').forEach(item => {
         item.setAttribute('role', 'button');
         item.setAttribute('tabindex', '0');
-        item.setAttribute('aria-label', 'View image full size');
+        item.setAttribute('aria-label', 'Open gallery collection');
 
         function open() {
-            const src = item.querySelector('img')?.src;
-            if (!src) return;
-            boxImg.src = src;
-            boxImg.alt = item.querySelector('img')?.alt || 'Portfolio image';
+            const galleryStr = item.dataset.gallery;
+            if (!galleryStr) return;
+            
+            const images = galleryStr.split(',').map(s => s.trim());
+            if (!images.length) return;
+            totalSlides = images.length;
+            
+            // Inject slides
+            track.innerHTML = '';
+            images.forEach((src, i) => {
+                const slide = document.createElement('div');
+                slide.className = 'lightbox-slide' + (i === 0 ? ' active' : '');
+                
+                const img = document.createElement('img');
+                img.src = src;
+                img.loading = i === 0 ? 'eager' : 'lazy'; // First eager, rest lazy
+                
+                slide.appendChild(img);
+                track.appendChild(slide);
+            });
+
+            counter.textContent = `1 / ${totalSlides}`;
+            trackWrap.scrollLeft = 0;
+            
+            const hasMultiple = totalSlides > 1;
+            prevBtn.style.display = hasMultiple ? 'flex' : 'none';
+            nextBtn.style.display = hasMultiple ? 'flex' : 'none';
+
             box.classList.add('is-open');
             document.body.style.overflow = 'hidden';
-            closeBtn?.focus();
+            
+            // Allow time for display:flex layout before updating scroll observer
+            setTimeout(updateOnScroll, 50);
         }
 
         item.addEventListener('click', open);
@@ -518,13 +579,24 @@ function initLightbox() {
     function close() {
         box.classList.remove('is-open');
         document.body.style.overflow = '';
-        setTimeout(() => { boxImg.src = ''; }, 500);
+        setTimeout(() => { track.innerHTML = ''; }, 500); // Clear memory after transition
     }
 
     closeBtn?.addEventListener('click', close);
-    box.addEventListener('click', e => { if (e.target === box) close(); });
+    prevBtn?.addEventListener('click', showPrev);
+    nextBtn?.addEventListener('click', showNext);
+    
+    // Clicking background closes
+    box.addEventListener('click', e => { 
+        if (e.target === box || e.target === trackWrap || e.target === track) close(); 
+    });
+    
+    // Keyboard navigation
     document.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && box.classList.contains('is-open')) close();
+        if (!box.classList.contains('is-open')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'ArrowLeft') showPrev();
     });
 }
 
