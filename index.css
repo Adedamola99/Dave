@@ -623,6 +623,9 @@ body.cursor-drag  .cursor-ring { width: 86px; height: 86px; border-color: var(--
     border-radius: 2px;
     background: var(--graphite);
 }
+.about-img-sub img {
+    object-position: center top;
+}
 
 .about-text {
     display: flex;
